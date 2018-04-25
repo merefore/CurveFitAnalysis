@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as mpl
 from scipy.optimize import curve_fit
 from scipy.optimize import least_squares
-
+##THIS IS A CHANGE
 #how many Gaussians?
 #argv = np.array(argv)
 #numGauss = argv.astype(int)
@@ -24,7 +24,7 @@ for i in range(1,len(data)):
 
 #carray = [c1,c2,c3,c4,c5]
 c = [0,1.695259,1.981486]
-	
+
 def Gauss1(x,A,c1,sig1):
 	return A*np.exp(-((x-c1)**2)/(2*sig1**2))
 
@@ -60,7 +60,7 @@ if 1 in numGauss:
 		if x%3==1:
 			print "%f\t%f\t%f" % (popt[x-1],popt[x],popt[x+1])
 	print "\n"
-	
+
 if 2 in numGauss:
 	initparam = [0.5,0.5,0.5,0.5]
 
@@ -83,7 +83,7 @@ if 2 in numGauss:
 			print "%f\t%f\t%f" % (popt[x-1],c[b],popt[x])
 			b+=1
 	print "\n"
-	
+
 if 3 in numGauss:
 	initparam = [0.5,0.5,0.5,0.5,0.5,0.5]
 
@@ -108,7 +108,7 @@ if 3 in numGauss:
 			print "%f\t%f\t%f" % (popt[x-1],c[b],popt[x])
 			b+=1
 	print "\n"
-	
+
 if 4 in numGauss:
 	initparam = [0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
 
@@ -135,7 +135,7 @@ if 4 in numGauss:
 			print "%f\t%f\t%f" % (popt[x-1],c[b],popt[x])
 			b+=1
 	print "\n"
-	
+
 if 5 in numGauss:
 	initparam = [0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
 
@@ -147,7 +147,7 @@ if 5 in numGauss:
 	p3 = [popt[4],c[3],popt[5]]
 	p4 = [popt[6],c[4],popt[7]]
 	p5 = [popt[8],c[5],popt[9]]
-	mpl.figure()	
+	mpl.figure()
 	mpl.plot(xdata,Gauss5(xdata,*popt),'r-',label="fit")
 	mpl.plot(xdata,ydata, 'b', label="data")
 	mpl.xticks(np.arange(0.5,3,0.5))
@@ -177,7 +177,7 @@ if 6 in numGauss:
 	p4 = [popt[9],popt[10],popt[11]]
 	p5 = [popt[12],popt[13],popt[14]]
 	p6 = [popt[15],popt[16],popt[17]]
-	mpl.figure()	
+	mpl.figure()
 	mpl.plot(xdata,Gauss6(xdata,*popt),'r-',label="fit")
 	mpl.plot(xdata,ydata, 'b', label="data")
 	mpl.xticks(np.arange(0.5,3,0.5))
@@ -193,7 +193,7 @@ if 6 in numGauss:
 		if x%3==1:
 			print "%f\t%f\t%f" % (popt[x-1],popt[x],popt[x+1])
 	print "\n"
-	
+
 if 7 in numGauss:
 	initparam = [0.5,1,0.5,0.5,1.4,0.5,0.5,1.7,0.5,0.5,1.8,0.5,0.5,1.9,0.5,0.5,2,0.5,0.5,2,0.5]
 
@@ -207,7 +207,7 @@ if 7 in numGauss:
 	p5 = [popt[12],popt[13],popt[14]]
 	p6 = [popt[15],popt[16],popt[17]]
 	p7 = [popt[18],popt[19],popt[20]]
-	mpl.figure()	
+	mpl.figure()
 	mpl.plot(xdata,Gauss7(xdata,*popt),'r-',label="fit")
 	mpl.plot(xdata,ydata, 'b', label="data")
 	mpl.xticks(np.arange(0.5,3,0.5))
